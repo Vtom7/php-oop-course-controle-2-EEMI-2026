@@ -1,5 +1,5 @@
 <?php
-session_start();
+/*session_start();
 
 function getDbConnexion(): PDO {
     $host = 'php-oop-exercice-db';
@@ -61,12 +61,33 @@ function getPosts(): array {
     $posts = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
     return $posts;
+}*/
+
+
+
+use App\Lib\Http\Request;
+use App\Lib\Http\Router;
+
+require_once __DIR__ . '/../vendor/autoload.php';
+
+try {
+    
+    $request = new Request();
+    $response = Router::route($request);
+
+    header($response->getHeadersAsString());
+    http_response_code($response->getStatus());
+    echo $response->getContent();
+    exit();
+} catch(\Exception $e) {
+    echo $e->getMessage();
 }
+
 ?>
 
 
 
-<!doctype html>
+<!--<!doctype html>
 <html class="h-full">
 <head>
   <meta charset="UTF-8">
@@ -114,4 +135,4 @@ function getPosts(): array {
         </div>        
     </main>
 </body>
-</html>
+</html>-->

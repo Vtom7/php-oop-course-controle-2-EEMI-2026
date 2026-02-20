@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Commands;
+namespace App\Lib\Command;
 
 use App\Database\DatabaseConnexion;
 use App\Database\Dsn;

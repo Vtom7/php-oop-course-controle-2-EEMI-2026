@@ -1,0 +1,8 @@
+
+[
+  {
+    "path": "",
+    "method": "GET",
+    "controller": "ApiController"
+  }
+]

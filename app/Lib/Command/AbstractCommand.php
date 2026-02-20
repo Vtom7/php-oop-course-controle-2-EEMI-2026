@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Command;
+namespace App\Lib\Command;
 
 abstract class AbstractCommand {
     public abstract function execute(): void;
